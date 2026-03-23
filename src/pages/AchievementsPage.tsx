@@ -8,8 +8,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
 import 'swiper/swiper-bundle.css';
 
-import vinhdanhImg from '../assets/images/d/Screenshot 2026-03-23 124429.png';
-import quanquanImg from '../assets/images/d/Screenshot 2026-03-23 124546.png';
+import vinhdanhImg from '../assets/images/d/Screenshot_2026-03-23_124429.png';
+import quanquanImg from '../assets/images/d/Screenshot_2026-03-23_124546.png';
 import goivonImg from '../assets/images/d/z7609403711381_a9d1eae8203c045f4a92437231c1d112.jpg';
 import camDauImg from '../assets/images/d/z7647955671785_98936622c47d9478792f5f1e089f019c.jpg';
 import triAnTesterImg from '../assets/images/d/z7647955076216_4c4927c8342292d8d9b6f24b005623ac.jpg';
