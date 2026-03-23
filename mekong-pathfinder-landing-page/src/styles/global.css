@@ -1,0 +1,179 @@
+html {
+  scroll-behavior: smooth;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@400;500;600;700;800&display=swap&subset=vietnamese');
+
+:root {
+  --primary-color: #1349ec;
+  --secondary-color: #00d2ff;
+  --bg-dark: #0a0c14;
+  --bg-light: #ffffff;
+  --text-dark: #ffffff;
+  --text-light: #1a1a1a;
+  --glass-bg-dark: rgba(255, 255, 255, 0.05);
+  --glass-bg-light: rgba(0, 0, 0, 0.03);
+  --border-dark: rgba(255, 255, 255, 0.1);
+  --border-light: rgba(0, 0, 0, 0.08);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  transition: background-color 0.4s ease, color 0.4s ease;
+  overflow-x: hidden;
+}
+
+/* Dark mode (Default) */
+html.dark body {
+  background-color: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+/* Light mode */
+html:not(.dark) body {
+  background-color: var(--bg-light);
+  color: var(--text-light);
+}
+
+h1,
+h2,
+h3,
+h4,
+.poppins {
+  font-family: 'Poppins', sans-serif;
+  color: inherit;
+}
+
+/* Ant Design overrides for global text */
+.ant-typography {
+  color: inherit !important;
+}
+
+h1.ant-typography,
+h2.ant-typography,
+h3.ant-typography,
+h4.ant-typography,
+.ant-typography h1,
+.ant-typography h2,
+.ant-typography h3,
+.ant-typography h4 {
+  font-family: 'Poppins', sans-serif !important;
+}
+
+/* Glassmorphism */
+.glass-panel {
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 16px;
+  transition: all 0.3s ease;
+}
+
+html.dark .glass-panel {
+  background: var(--glass-bg-dark);
+  border: 1px solid var(--border-dark);
+}
+
+html:not(.dark) .glass-panel {
+  background: var(--glass-bg-light);
+  border: 1px solid var(--border-light);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+/* Header */
+.glass-header {
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  transition: background 0.4s ease;
+}
+
+html.dark .glass-header {
+  background: rgba(10, 12, 20, 0.7);
+  border-bottom: 1px solid var(--border-dark);
+}
+
+html:not(.dark) .glass-header {
+  background: rgba(245, 247, 255, 0.8);
+  border-bottom: 1px solid var(--border-light);
+}
+
+/* Aura Glow */
+.aura-glow {
+  position: absolute;
+  width: 50vw;
+  height: 50vw;
+  background: radial-gradient(circle, rgba(19, 73, 236, 0.12) 0%, rgba(19, 73, 236, 0) 70%);
+  filter: blur(80px);
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.8;
+}
+
+html:not(.dark) .aura-glow {
+  background: radial-gradient(circle, rgba(19, 73, 236, 0.05) 0%, rgba(19, 73, 236, 0) 70%);
+}
+
+.aura-top-right {
+  top: -15%;
+  right: -5%;
+}
+
+.aura-bottom-left {
+  bottom: -15%;
+  left: -5%;
+}
+
+.aura-center {
+  top: 30%;
+  left: 25%;
+}
+
+/* Ant Design Global Overrides */
+.ant-layout {
+  background: transparent !important;
+}
+
+.ant-menu {
+  line-height: inherit !important;
+}
+
+.ant-menu-horizontal {
+  border-bottom: none !important;
+}
+
+html.dark .ant-menu {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+html:not(.dark) .ant-menu {
+  color: rgba(0, 0, 0, 0.8);
+}
+
+/* Animations */
+@keyframes float {
+  0% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-15px);
+  }
+
+  100% {
+    transform: translateY(0px);
+  }
+}
+
+.float-anim {
+  animation: float 6s ease-in-out infinite;
+}
+
+/* Utility */
+.section-padding {
+  padding: clamp(60px, 10vw, 100px) clamp(20px, 5vw, 50px);
+}
