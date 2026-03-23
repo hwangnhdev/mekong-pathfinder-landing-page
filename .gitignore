@@ -33,9 +33,3 @@ build/
 *.njsproj
 *.sln
 *.sw?
-
-# Project-specific temporary folders
-mekong-pathfinder-landing-page/
-mekong-pathfinder-page-deploy/
-b_6TCj7IY2FlQ-*/
-gallery/
