@@ -1,51 +1,73 @@
-# 🌊 Mekong Pathfinder - Protecting Every Journey
+# React + TypeScript + Vite
 
-Mekong Pathfinder is a technology-driven community project designed to support urban management and sustainable development in the Mekong Delta, specifically focusing on **Can Tho City**. Our mission is to combine AI technology with real-time community data to provide accurate flood warnings and safe navigation routes.
+This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
 
-## 🚀 Key Features
-- **AI-Powered Navigation**: Real-time route recalculation based on flood data.
-* **Community Reports**: 5,000+ active reports from users to ensure data accuracy.
-* **Real-time Monitoring**: Network of 1,200+ warning points and smart cameras across the city.
-* **Multi-language Support**: Fully localized in Vietnamese and English.
+Currently, two official plugins are available:
 
-## 🏆 Achievements
-- **Champion** at Business Challenge 2025.
-* **50 Million VND Funding** from FPT University Startup Fund.
-* **Top 10** Innovative Projects for the Community 2025.
+- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
+- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
 
-## ⚒️ Tech Stack
-- **Frontend**: React, TypeScript, Vite.
-- **UI Components**: Ant Design (AntD).
-- **Animations**: Framer Motion.
-- **Styling**: Vanilla CSS with Glassmorphism aesthetics.
-- **Icons**: Lucide React.
-- **Project Structure**: Modular component-based architecture.
+## React Compiler
 
-## 📦 Getting Started
-1. Clone the repository:
-   ```bash
-   git clone https://github.com/hwangnhdev/mekong-pathfinder-landing-page.git
-   ```
-2. Navigate to the project directory:
-   ```bash
-   cd mekong-pathfinder-landing-page
-   ```
-3. Install dependencies:
-   ```bash
-   npm install
-   ```
-4. Run the development server:
-   ```bash
-   npm run dev
-   ```
+The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
 
-## 👥 Meet our Team
-Our core team consists of passionate students from FPT University Can Tho:
-- **Quynh**: AI Lead & Project Vision.
-- **Hoang**: Fullstack Architect & Lead Dev.
-- **Tran**: UX/UI Design & Brand Identity.
-- **Thao**: Multimedia & Communication.
-- **Vui**: Project Manager & Core Developer.
+## Expanding the ESLint configuration
 
----
-*Built with ❤️ in Can Tho, Vietnam.*
+If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+
+```js
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+
+      // Remove tseslint.configs.recommended and replace with this
+      tseslint.configs.recommendedTypeChecked,
+      // Alternatively, use this for stricter rules
+      tseslint.configs.strictTypeChecked,
+      // Optionally, add this for stylistic rules
+      tseslint.configs.stylisticTypeChecked,
+
+      // Other configs...
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
+```
+
+You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+
+```js
+// eslint.config.js
+import reactX from 'eslint-plugin-react-x'
+import reactDom from 'eslint-plugin-react-dom'
+
+export default defineConfig([
+  globalIgnores(['dist']),
+  {
+    files: ['**/*.{ts,tsx}'],
+    extends: [
+      // Other configs...
+      // Enable lint rules for React
+      reactX.configs['recommended-typescript'],
+      // Enable lint rules for React DOM
+      reactDom.configs.recommended,
+    ],
+    languageOptions: {
+      parserOptions: {
+        project: ['./tsconfig.node.json', './tsconfig.app.json'],
+        tsconfigRootDir: import.meta.dirname,
+      },
+      // other options...
+    },
+  },
+])
+```

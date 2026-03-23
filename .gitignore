@@ -7,14 +7,14 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-# Main production build
-dist/
-dist-ssr/
-build/
-
 # Node modules
 node_modules/
 jspm_packages/
+
+# Production build
+dist/
+dist-ssr/
+build/
 
 # Environment variables
 .env
@@ -34,7 +34,8 @@ jspm_packages/
 *.sln
 *.sw?
 
-# Temporary and deploy folders
+# Project-specific temporary folders
+mekong-pathfinder-landing-page/
 mekong-pathfinder-page-deploy/
 b_6TCj7IY2FlQ-*/
 gallery/
