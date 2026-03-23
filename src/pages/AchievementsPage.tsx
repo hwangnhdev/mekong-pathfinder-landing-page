@@ -6,10 +6,7 @@ import { useLanguage } from '../context/LanguageContext';
 // Swiper imports
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination, Autoplay } from 'swiper/modules';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-import 'swiper/css/autoplay';
+import 'swiper/swiper-bundle.css';
 
 import vinhdanhImg from '../assets/images/d/Screenshot 2026-03-23 124429.png';
 import quanquanImg from '../assets/images/d/Screenshot 2026-03-23 124546.png';
